@@ -1,5 +1,6 @@
 package edu.kh.oop.practice.run;
 
+import edu.kh.oop.practice.model.service.BookService;
 import edu.kh.oop.practice.model.service.HeroService;
 
 // 실행용 클래스
@@ -7,9 +8,13 @@ public class PracticeRun {
 	
 	public static void main(String[] args) {
 		
-		HeroService hService = new HeroService();
+		HeroService hs = new HeroService();
 		
-		hService.ex1();
+		//hs.ex1();
+		
+		BookService bs = new BookService();
+		
+		bs.practice();
 	}
 	
 	/* 현재 객체 : 속성과 기능을 가진 독립적으로 인식되는 모든 것
