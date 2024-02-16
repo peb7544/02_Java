@@ -67,9 +67,10 @@ public class MemberController {
 	public void insertMember(Member m) {
 		
 		// 매개변수로 전달받은 회원정보를 mem 객체에 추가
+		mem[memberCount] = m;
 		
 		// memberCount 1 증가
-		
+		memberCount++;
 	}
 	
 	/* 매개변수로 전달받은 menu에 따라 

@@ -24,4 +24,16 @@
     <fullyQualifiedTypeName name="edu.kh.inheritance.model.dto.Person"/>
     <fullyQualifiedTypeName name="edu.kh.inheritance.model.service.InheritanceService"/>
     <fullyQualifiedTypeName name="edu.kh.inheritance.model.dto.Student"/>
+    <fullyQualifiedTypeName name="com.kh.inheritance.model.dto.SmartPhone"/>
+    <fullyQualifiedTypeName name="com.hw1.model.vo.Student"/>
+    <fullyQualifiedTypeName name="com.hw4.vo.Member"/>
+    <fullyQualifiedTypeName name="com.hw4.controller.MemberController"/>
+    <fullyQualifiedTypeName name="edu.kh.poly.ex1.model.vo.Car"/>
+    <fullyQualifiedTypeName name="edu.kh.poly.ex1.model.service.PolyService"/>
+    <fullyQualifiedTypeName name="edu.kh.poly.ex2.model.vo.Animal"/>
+    <fullyQualifiedTypeName name="edu.kh.poly.ex2.model.vo.Person"/>
+    <fullyQualifiedTypeName name="edu.kh.poly.ex2.model.service.AbstractService"/>
+    <fullyQualifiedTypeName name="com.hw1.model.dto.Book"/>
+    <fullyQualifiedTypeName name="com.hw2.model.dto.Employee"/>
+    <fullyQualifiedTypeName name="com.hw2.model.dto.Person"/>
 </qualifiedTypeNameHistroy>

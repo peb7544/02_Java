@@ -75,15 +75,26 @@ public class MemberMenu {
 			 * MemberController의 insertMember() 메소드로 전달
 			 * "성골적으로 회원 등록이 되었습니다." 출력
 			 * */
-		
+			
+			System.out.print("비밀번호 입력 : ");
+			String userPwd = sc.next();
+			
+			System.out.print("이름 입력 : ");
+			String name = sc.next();
+			
+			System.out.print("나이 입력 : ");
+			int age = sc.nextInt();
+			
+			System.out.print("성별 입력 : ");
+			char gender = sc.next().charAt(0);
+			
+			System.out.print("이메일 입력 : ");
+			String email = sc.next();
+			
+			
 		}
-		
-		
-		
-		
-		
-		
 	}
+	
 	
 	/* 메인 메뉴에서 2번 선택시 실행되는 서브베뉴 -> 반복실행
 	 * 각 서브메뉴에 해당하는 검색 내용을 입력받고
