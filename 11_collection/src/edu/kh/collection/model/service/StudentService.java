@@ -326,20 +326,12 @@ public class StudentService {
 		}
 	}
 	
-	/**
-	 * 5. 이름으로 검색(일치)
-	 * 이름이 일치하는 학생을 찾아서 조회하는 메서드(완전 일치)
-	 * 검색할 이름 입력받아 studentList에서 꺼내온 Student 객체의 name 값이 같은지 비교
-	 * - 일치하는 경우 Student 객체 출력
-	 * - "검색 결과가 없습니다." 출력
-	 */
-	public void searchName1() throws InputMismatchException {
+	public void nameSerch(int num, String title) {
 		
-		System.out.println("===== 이름으로 검색(포함)");
+		System.out.println("===== 이름으로 검색(" + title +")");
 		
 		System.out.print("이름 검색 : ");
 		String inputName = sc.next();
-		
 		
 		int index = 0;
 		boolean flag = false;
@@ -347,7 +339,14 @@ public class StudentService {
 			
 			index++;
 			
-			if( inputName.equals(std.getName()) ) {
+			boolean s = false;
+			
+			switch(num) {
+			case 1 : s = inputName.equals(std.getName()); break;
+			case 2 : s = std.getName().contains(inputName); break;
+			}
+			
+			if( s ) {
 				
 				System.out.println(std);
 				
@@ -362,6 +361,18 @@ public class StudentService {
 		}
 	}
 	
+	/**
+	 * 5. 이름으로 검색(일치)
+	 * 이름이 일치하는 학생을 찾아서 조회하는 메서드(완전 일치)
+	 * 검색할 이름 입력받아 studentList에서 꺼내온 Student 객체의 name 값이 같은지 비교
+	 * - 일치하는 경우 Student 객체 출력
+	 * - "검색 결과가 없습니다." 출력
+	 */
+	public void searchName1() throws InputMismatchException {
+		
+		nameSerch(1, "일치");
+	}
+	
 	
 	/**
 	 * 6. 이름으로 검색(포함)
@@ -374,29 +385,6 @@ public class StudentService {
 		
 		// boolean String.contains(문자열) : String에 문자열이 포함되어 있으면 true / 없으면 false
 		
-		System.out.println("===== 이름으로 검색(일치)");
-		
-		System.out.print("문자열 검색 : ");
-		String input = sc.next();
-		
-		int index = 0;
-		boolean flag = false;
-		for( Student std : studentList ) {
-			
-			index++;
-			
-			if( std.getName().contains(input) ) {
-				
-				System.out.println(std);
-				
-				flag = true;
-			}
-		}
-		
-		if(!flag) {
-			System.out.println("검색 결과가 없습니다.");
-		
-			return;
-		}
+		nameSerch(2, "포함");
 	}
 }
