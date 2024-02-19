@@ -75,7 +75,7 @@ public class StudentService {
 	 * 메서드 설명용 주석
 	 * @author mihyun@iei.or.kr
 	 */
-	public void displayMenu() {
+	public void displayMenu() throws InputMismatchException {
 		int menuNum = 0;  // 메뉴 선택용 변수
 		
 		do {
@@ -328,7 +328,7 @@ public class StudentService {
 	
 	public void nameSerch(int num, String title) {
 		
-		System.out.println("===== 이름으로 검색(" + title +")");
+		System.out.println("===== 이름으로 검색(" + title +") =====");
 		
 		System.out.print("이름 검색 : ");
 		String inputName = sc.next();
@@ -381,7 +381,7 @@ public class StudentService {
 	 * - 포함되는 경우 Student 객체 출력
 	 * - "검색 결과가 없습니다." 출력
 	 */
-	public void searchName2() {
+	public void searchName2() throws InputMismatchException {
 		
 		// boolean String.contains(문자열) : String에 문자열이 포함되어 있으면 true / 없으면 false
 		
