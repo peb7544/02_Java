@@ -15,7 +15,6 @@
     <fullyQualifiedTypeName name="edu.kh.oop.practice.model.vo.Book"/>
     <fullyQualifiedTypeName name="edu.kh.oop.practice.model.service.BookService"/>
     <fullyQualifiedTypeName name="edu.kh.oop.practice.snack.model.vo.Snack"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="edu.kh.oarr.model.vo.Member"/>
     <fullyQualifiedTypeName name="com.hw1.model.vo.Employee"/>
     <fullyQualifiedTypeName name="com.hw3.controller.ProductController"/>
@@ -36,4 +35,13 @@
     <fullyQualifiedTypeName name="com.hw1.model.dto.Book"/>
     <fullyQualifiedTypeName name="com.hw2.model.dto.Employee"/>
     <fullyQualifiedTypeName name="com.hw2.model.dto.Person"/>
+    <fullyQualifiedTypeName name="edu.kh.exception.model.service.ExceptionService"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="edu.kh.collection.model.vo.Student"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="edu.kh.collection.model.service.StudentService"/>
 </qualifiedTypeNameHistroy>
