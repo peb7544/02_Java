@@ -6,10 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Scanner;
-import java.util.Set;
 
 import com.hw4.model.dto.Toy;
+
+import java.util.Scanner;
+import java.util.Set;
 
 /**
  * 장난감 공장을 모델링하고, 장난감 관리 기능을 제공하는
@@ -220,8 +221,11 @@ public class ToyFactory {
 		boolean flag = false;
 		for(Toy toy : toys) {
 			
+			int index = toys.indexOf(toy);
 			if(toy.getToyNm().equals(inputToyNm)) {
-				int index = toys.indexOf(toy);
+				
+				
+				System.out.println("index : " + index);
 				
 				toys.remove(index);
 				
