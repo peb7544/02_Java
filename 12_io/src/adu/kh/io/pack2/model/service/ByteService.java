@@ -409,7 +409,7 @@ public class ByteService {
 			sb.append(target);  // "/io_test/20240222/노래가사.txt"
 			
 			/* Int String.lastIndexOf("문자열") 
-			 * -String 뒤에서부터 검색해서
+			 * -String 뒤에서 부터 검색해서
 			 *  "문자열"과 일치하는 부분의 인덱스를 반환
 			 *  없으면 -1 반환
 			 * */
