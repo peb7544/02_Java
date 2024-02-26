@@ -153,9 +153,52 @@ public class TodoListView {
 		
 	}
 	
-	public void todoDetailView() {
+	/**
+	 * 할일 상세 조회(인덱스 번호 입력 받기
+	 * @throws NumberFormatException
+	 * @throws IOException
+	 */
+	public void todoDetailView() throws IOException {
 		
 		System.out.println("\n============[ 2. Todo Detil View ]=============\n");
+		
+		System.out.print(" 인덱스 번호 입력 : ");
+		int index = Integer.parseInt(br.readLine());
+		
+		// 할 일 상세 조회 서비스 호출 후 결과 반환 받기
+		service.todoDetilView(index);
+		
+		Map<String, Object> map = service.todoListFullView();
+		
+		// 반환 받은 map 요소 해체하기
+		List<Todo> todoList = (List<Todo>)map.get("todoList");
+		int completeCount = (int)map.get("completeCount");
+		
+		
+		
+		
+		System.out.println();
+		
+		for(int i = 0; i < todoList.size(); i++) {
+			
+			if( i == index ) {
+				
+				String completeYN = todoList.get(i).isComplete() ? "O" : "X";
+				
+				String regDate = service.dateFormat(todoList.get(i).getRegDate());
+				
+				System.out.println("--------------------------------------");
+				System.out.printf("제목 : %s\n등록일 : %s\n완료여부 : %s\n\n\n",
+						todoList.get(i).getTitle(), regDate, completeYN);
+				
+				System.out.println("[새부내용]");
+				System.out.println("---------------------------------------");
+				
+				System.out.println(todoList.get(i).getDetail());
+				
+			}
+		}
+		
 	}
 	
 	public void todoAdd() {

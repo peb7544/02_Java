@@ -16,4 +16,11 @@ public interface TodoListDAO {
 	 */
 	List<Todo> todoListFullView();
 
+	/**
+	 * 전달받은 index번째 todo를 반환 DAO
+	 * @param index
+	 * @return index 번째 todo, 없으면 null
+	 */
+	Todo todoDetailView(int index);
+
 }

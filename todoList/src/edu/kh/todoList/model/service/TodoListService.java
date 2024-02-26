@@ -22,4 +22,11 @@ public interface TodoListService {
 	 */
 	String dateFormat(LocalDateTime regDate);
 
+	/**
+	 * 전달받은 index번째 todo 반환
+	 * @param index
+	 * @return index번째 todo 상세정보, 없으면 null 반환
+	 */
+	void todoDetilView(int index);
+
 }
