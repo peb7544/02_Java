@@ -154,7 +154,7 @@ public class TodoListView {
 	}
 	
 	/**
-	 * 할일 상세 조회(인덱스 번호 입력 받기
+	 * 할일 상세 조회(인덱스 번호 입력 받기// 깃 수정
 	 * @throws NumberFormatException
 	 * @throws IOException
 	 */
