@@ -27,6 +27,26 @@ public interface TodoListService {
 	 * @param index
 	 * @return index번째 todo 상세정보, 없으면 null 반환
 	 */
-	void todoDetilView(int index);
+	String todoDetilView(int index);
+
+	/**
+	 * 할 일 완료 여부 변경( O <-> X)
+	 * @return 해당 index 요소의 완료 여부가 변경되면 true
+	 *         index 요소가 없으면 false
+	 * @throws Exception 
+	 */
+	boolean todoComplete(int index) throws Exception;
+
+	/**
+	 * 할 일 수정 서비스
+	 * @param index
+	 * @param title
+	 * @param content
+	 * @return 수정 성공 true 실
+	 */
+	boolean todoUpdate(int index, String title, String content);
+
+	String todoDeleteList(int index);
+	
 
 }

@@ -154,7 +154,7 @@ public class TodoListView {
 	}
 	
 	/**
-	 * 할일 상세 조회(인덱스 번호 입력 받기// 깃 수정
+	 * 할일 상세 조회(인덱스 번호 입력 받기
 	 * @throws NumberFormatException
 	 * @throws IOException
 	 */
@@ -206,20 +206,82 @@ public class TodoListView {
 		System.out.println("\n============[ 3. Todo Add ]=============\n");
 	}
 	
-	public void todoComplete() {
+	
+	/**
+	 * 할 일 완료 여부 변경( O <-> X)
+	 * - index 번호 입력받기
+	 */
+	public void todoComplete()  throws IOException, Exception {
 		
 		System.out.println("\n============[ 4. Todo Complete ]=============\n");
+		
+		System.out.print("변경할 인덱스 번호 입력 : ");
+		int index = Integer.parseInt(br.readLine());
+		
+		// 서비스를 호출하고 결과(T/F) 반환 받기
+		boolean result = service.todoComplete(index);
+		
+		if(result) { // 변경 성공
+			System.out.println("[변경되었습니다.]");
+			
+		} else { // index 요소가 초과한 경우
+			System.out.println("### 인덱스가 존재하지 않습니다. ###");
+		}
 	}
 	
-	public void todoUpdate() {
+	/**
+	 * 할 일 수정
+	 * - 인덱스 번호를 입력받아 정상 범위 내의 index 값인지 확인
+	 * - 정상 범위 index인 경우 제목, 상세 내용 수정
+	 */
+	public void todoUpdate() throws IOException { 
 		
 		System.out.println("\n============[ 5. Todo Update ]=============\n");
+		
+		System.out.print("수정할 인덱스 번호 입력 : ");
+		int index = Integer.parseInt(br.readLine());
+		
+		// 상세 조회 서비스 재활용(인덱스 범위 초가 시 null 반환)
+		String todoDetail = service.todoDetilView(index);
+		
+		if(todoDetail == null) {
+			System.out.println("### 인덱스 존재하지 않음###");
+			return;
+		} 
+		
+		/* 수정 코드 작성..
+		 * 수정 전 상세 내용 출력
+		 * */
+		System.out.println("@@@@@@ [ 수정 전 ] @@@@@@");
+		
+		System.out.println(todoDetail);
+		
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@");
+		
+		System.out.println("-----------------------------------------------");
+		
+		// 수정 서비스 호출 후 결과 반환 받기
+		//boolean result = service.todoUpdate(title, sb.toString());
+		
 	}
 	
-	public void todoDelete() {
+	/**
+	 * 할 일 삭제
+	 * - 인덱스번호 입력받아서 일하는 요소거 삭제
+	 */
+	public void todoDelete() throws Exception {
 		
 		System.out.println("\n============[ 6. Todo Delete ]=============\n");
 		
-	}
+		System.out.print("삭제할 인덱스 번호 입력 : ");
+		int index = Integer.parseInt(br.readLine());
+		
+		// 사제 서비스 호출 결과 간한 받기
+		// -> 제목 또는 null 반환
+		String reusult = service.todoDeleteList(index);
+		
+		if(reusult == null) System.out.println("인덱스가 존재하지 않습니다.");
+		else System.out.printf("[%s]가 삭제되었습니다.", reusult);
+	};
 }
 

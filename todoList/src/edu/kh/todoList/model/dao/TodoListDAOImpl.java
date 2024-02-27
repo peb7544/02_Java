@@ -101,4 +101,64 @@ public class TodoListDAOImpl implements TodoListDAO {
 		// 2. index가 정상 범위인 경우 index번째 요소 반
 		return todoList.get(index);
 	}
+
+	@Override
+	public void saveFile() throws Exception {
+		// todoList를 파일로 저장하는 메서드
+		
+		
+		// FILE_PATH 경로에 있는 파일과 연결된 객체 출력 스트림 생성
+		oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH));
+		oos.writeObject(todoList); // todoList 출력
+		
+	}
+
+	@Override
+	public boolean todoComplete(int index) throws Exception {
+		
+		// 1. index 범위 초과시 false 반환
+		if(index < 0 || index >= todoList.size()) return   false;
+			
+		/* 2. index 정상 범위인 경우
+		 *    index번째 요소의 complete 값을 변경하고
+		 *    파일 저장 후 true 반환
+		 * */
+		
+		boolean complete = todoList.get(index).isComplete(); // "false"/ "trie"
+		todoList.get(index).isComplete();
+		
+		saveFile(); // 파일저장
+		
+		return true;
+	}
+
+	@Override
+	public boolean todoUpdate(int index, String title, String content) {
+		// 수정된 제목, 내용을 이용해서 Todo 객체를 생성
+		Todo todo = new Todo(title, content, 
+				todoList.get(index).isComplete(),
+				todoList.get(index).getRegDate()
+				);
+		// index번재 요소의 complete, regDate 값을 얻어와 todo에 세팅
+		
+		/* List.set(int index, E e); 
+		 * index번째 요소를 매개변수 e로 바꾸고,
+		 * 이전 요소를 반환(없으면 null)
+		 * */
+		
+		if(todoList.set(index, todo) != null)  { // 수정 성공
+			
+			// 변경된 todo 저장
+			try {
+				saveFile();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return true;
+		}
+		
+		return false;
+	}
 }

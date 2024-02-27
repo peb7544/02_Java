@@ -84,14 +84,54 @@ public class TodoListServiceImpl implements TodoListService {
 	 * 할일 상세 조회 서비스
 	 */
 	@Override
-	public void todoDetilView(int index) {
+	public String todoDetilView(int index) {
 		/* 1. DAO에 있는 todoList에서 index번째 요소(Todo) 반환 받기
 		 *    없으면 null 반환
 		 * */
 		
 		Todo  todo = dao.todoDetailView(index);
 		
+		return "";
+		
 	}
+
+	/**
+	 * 할 일 완료 여부 서비스
+	 */
+	@Override
+	public boolean todoComplete(int index) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.todoComplete(index);
+	}
+	/* service 메서드가 별도 처리를 하는게 업음
+	 * -> 마우것도 안한다고 대개 서비스를 사용하지 않으면 안된다.
+	 * */
+	
+	/**
+	 *수정 서비스 호출 후 결과 반환 받기
+	 */
+	@Override
+	public boolean todoUpdate(int index, String title, String content) {
+		// TODO Auto-generated method stub
+		boolean result =  dao.todoUpdate(index, title, content);
+		
+		if(result) {
+			System.out.println("수정");
+		} else {
+			
+			System.out.println("### 수정 실패 ###");
+				
+		}
+		return result;
+	}
+
+	@Override
+	public String todoDeleteList(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	
 	
 }
