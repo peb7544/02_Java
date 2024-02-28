@@ -4,8 +4,12 @@ import java.io.Serializable;
 import java.util.Set;
 
 // 값 전달 역할
+/**
+ * 
+ */
 public class Movie implements Serializable {
 	
+	private int movieNum;
 	private String titile;
 	private Set<String> genre; // 장르
 	private String director; // 감독
@@ -14,14 +18,15 @@ public class Movie implements Serializable {
 	private String releaseDate; // 개봉일
 	private int time; // 시간
 	private int rating; // 평점
-	//private String introduce; // 소개
+	private String introduce; // 소개
 	//private String reivew; // 후기
 	
 	public Movie() {}
-
-	public Movie(String titile, Set<String> genre, String director, String produce, String country,
-			String releaseDate, int time, int rating) {
+	
+	public Movie(int movieNum, String titile, Set<String> genre, String director, String produce, String country,
+			String releaseDate, int time, int rating, String introduce) {
 		super();
+		this.movieNum = movieNum;
 		this.titile = titile;
 		this.genre = genre;
 		this.director = director;
@@ -30,6 +35,15 @@ public class Movie implements Serializable {
 		this.releaseDate = releaseDate;
 		this.time = time;
 		this.rating = rating;
+		this.introduce = introduce;
+	}
+
+	public int getMovieNum() {
+		return movieNum;
+	}
+
+	public void setMovieNum(int movieNum) {
+		this.movieNum = movieNum;
 	}
 
 	public String getTitile() {
@@ -96,11 +110,14 @@ public class Movie implements Serializable {
 		this.rating = rating;
 	}
 
-	@Override
-	public String toString() {
-		return "Movie [titile=" + titile + ", genre=" + genre + ", director=" + director + ", produce=" + produce
-				+ ", country=" + country + ", releaseDate=" + releaseDate + ", time=" + time + ", rating=" + rating
-				+ "]";
+	public String getIntroduce() {
+		return introduce;
 	}
+
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
+	}
+	
+	
 	
 }
